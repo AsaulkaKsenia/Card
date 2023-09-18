@@ -4,12 +4,12 @@ stack: jdk 11
 
 branches:
   only:
-    - master
+    - main
 
 build: off
 
 install:
-  - java -jar ./artifacts/app-mbank.jar &
+  - java -jar ./artifacts/app-order.jar &
   - chmod +x gradlew
 
 build_script:
