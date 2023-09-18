@@ -1,8 +1,8 @@
+Thumbs.db*
+.DS_Store
 HELP.md
 .gradle
 build/
-!**/src/main/**
-!**/src/test/**
 
 ### STS ###
 .apt_generated
@@ -38,3 +38,8 @@ out/
 *.zip
 *.tar.gz
 *.rar
+
+### Exclusions ###
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**
+!**/src/test/**
