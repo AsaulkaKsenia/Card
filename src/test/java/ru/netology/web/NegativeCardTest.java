@@ -42,9 +42,8 @@ class NegativeCardTest {
 
     @Test
     void shouldBeFailedIncorrectName() {
-        List<WebElement> elements = driver.findElements(By.className("input__control"));
-        elements.get(0).sendKeys("Asaulka Ksenia");
-        elements.get(1).sendKeys("+79283159595");
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Asaulka Ksenia");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79283159595");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button")).click();
 
@@ -53,9 +52,8 @@ class NegativeCardTest {
     }
     @Test
     void shouldBeFailedIncorrectNameNull() {
-        List<WebElement> elements = driver.findElements(By.className("input__control"));
-        elements.get(0).sendKeys("");
-        elements.get(1).sendKeys("+79283159595");
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79283159595");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button")).click();
 
@@ -64,9 +62,8 @@ class NegativeCardTest {
     }
     @Test
     void shouldBeFailedIncorrectPhoneMinSymbols() {
-        List<WebElement> elements = driver.findElements(By.className("input__control"));
-        elements.get(0).sendKeys("Асаулка Ксения");
-        elements.get(1).sendKeys("+792831");
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Асаулка-Попова Ксения");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+792831");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button")).click();
 
@@ -75,9 +72,8 @@ class NegativeCardTest {
     }
     @Test
     void shouldBeFailedIncorrectPhoneNoSymbols() {
-        List<WebElement> elements = driver.findElements(By.className("input__control"));
-        elements.get(0).sendKeys("Асаулка Ксения");
-        elements.get(1).sendKeys("79283159595");
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Асаулка-Попова Ксения");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("79283159595");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button")).click();
 
@@ -86,9 +82,8 @@ class NegativeCardTest {
     }
     @Test
     void shouldBeFailedIncorrectPhoneExtraSymbols() {
-        List<WebElement> elements = driver.findElements(By.className("input__control"));
-        elements.get(0).sendKeys("Асаулка Ксения");
-        elements.get(1).sendKeys("+79283159-595");
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Асаулка-Попова Ксения");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79283159-595");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button")).click();
 
@@ -97,9 +92,8 @@ class NegativeCardTest {
     }
     @Test
     void shouldBeFailedIncorrectPhoneNull() {
-        List<WebElement> elements = driver.findElements(By.className("input__control"));
-        elements.get(0).sendKeys("Асаулка Ксения");
-        elements.get(1).sendKeys("");
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Асаулка-Попова Ксения");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button")).click();
 
@@ -108,7 +102,6 @@ class NegativeCardTest {
     }
     @Test
     void shouldBeFailedIncorrectCheckbox() {
-        //List<WebElement> elements = driver.findElements(By.className("input__control"));
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Асаулка Ксения");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+79283159595");
         driver.findElement(By.className("button")).click();

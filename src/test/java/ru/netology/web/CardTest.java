@@ -41,9 +41,8 @@ class CardTest {
 
     @Test
     void shouldTestLaunchOfTheForm() {
-        List<WebElement> elements = driver.findElements(By.className("input__control"));
-        elements.get(0).sendKeys("Асаулка Ксения");
-        elements.get(1).sendKeys("+79280000000");
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Асаулка-Попова Ксения");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79280000000");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button")).click();
         String text = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
